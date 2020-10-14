@@ -3,13 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var cors = require('cors')
+var cors = require('cors');
 
-var db = require('./db/mongo')
+var db = require('./db/mongo');
 
-// var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var listersRouter = require('./routes/api/apiListers')
+var listersRouter = require('./routes/api/apiListers');
 
 var app = express();
 
@@ -27,7 +27,7 @@ db.connect(app.locals)
     app.use(express.static(path.join(__dirname, 'public')));
 
     // app.use('/', indexRouter);
-    app.use('/v1/listers', listersRouter)
+    app.use('/v1/listers', listersRouter);
     app.use('/users', usersRouter);
 
     // catch 404 and forward to error handler
