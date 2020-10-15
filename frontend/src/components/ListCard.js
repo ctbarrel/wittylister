@@ -9,14 +9,14 @@ export default function ListCard({ list, refresh }) {
         item => {
             return (
                 <ListItem item={item}
-                    key={item._id}
+                    key={`${list._id}${list.items.indexOf(item)}`}
                     refresh={refresh} />
             )
         }
     )
 
     return (
-        <Card key={list._id}>
+        <Card key={list._id} className='list-card'>
             <Card.Header>
                 {list.name}
             </Card.Header>

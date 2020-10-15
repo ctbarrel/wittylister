@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-
 import ListCard from './ListCard'
-
+import NewLister from './AddLister'
 const API_URL = process.env.REACT_APP_API_URL
 
 export default class extends Component {
@@ -42,11 +41,13 @@ export default class extends Component {
 
         return (
             <div>
-                <h1>Placeholder Title</h1>
+                <h1>Witty Listers</h1>
                 <input name='userView'
                 value={this.state.userView}
                 placeholder='Enter Username Here' 
-                onChange={this.handleChange}/>
+                onChange={this.handleChange}/> 
+                <br /><NewLister refresh={this.refresh} user={this.state.userView}/>
+                <br />
                 {displayLists}
             </div>
         )

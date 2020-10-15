@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Button from 'react-bootstrap/Button'
 
 export default function ListItem({item, refresh}) {
     const [done, setDone] = useState(false)
@@ -12,8 +11,8 @@ export default function ListItem({item, refresh}) {
     var doneClass = `its${done}`
     
     return (
-        <div>
-            <span className={doneClass}>
+        <div className={doneClass}>
+            <span className='list-item'>
                 {item}
             </span>
             <input name='doneBox'

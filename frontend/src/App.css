@@ -2,7 +2,18 @@
   text-align: center;
 }
 
+.list-card {
+  display: inline-block;
+  width: 40%;
+  min-width: 300px;
+  margin: 10px 5%;
+}
+
 .itstrue {
   color: gray;
   text-decoration: line-through;
+}
+
+.list-item {
+  padding: 5px
 }
