@@ -27,7 +27,7 @@ db.connect(app.locals)
     app.use(express.static(path.join(__dirname, 'public')));
 
     // app.use('/', indexRouter);
-    app.use('/v1/listers', listersRouter);
+    app.use('/listers', listersRouter);
     app.use('/users', usersRouter);
 
     // catch 404 and forward to error handler
