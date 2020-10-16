@@ -1,5 +1,6 @@
-.App {
+.App, html {
   text-align: center;
+  background-image: linear-gradient(90deg, black, silver, black)
 }
 
 .list-card {

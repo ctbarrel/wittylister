@@ -15,7 +15,7 @@ function NewListerModal(props) {
       </Modal.Header>
 
       <Modal.Body>
-        <NewListerForm user={props.user}/>
+        <NewListerForm hide={props.onHide} user={props.user}/>
       </Modal.Body>
     </Modal>
   );
@@ -24,6 +24,13 @@ function NewListerModal(props) {
 export default function NewLister({ refresh, user }) {
   const [modalShow, setModalShow] = React.useState(false);
 
+  if(user === '') {
+    return (
+    <div>
+      Please Enter Username
+    </div>
+    )
+  }
   return (
     <>
       <Button variant="outline-primary" 

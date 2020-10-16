@@ -9,8 +9,8 @@ export default class NewListerForm extends Component {
         super(props)
         this.state = {
             user: props.user,
+            name: '',
             items: [''],
-            owned: false
         }
     }
 
@@ -46,11 +46,7 @@ export default class NewListerForm extends Component {
             body: JSON.stringify(this.state)
         })
         .then(this.props.refresh)
-        .then(() => this.setState({
-            user: '',
-            items: [''],
-            owned: false
-        }))
+        .then(this.props.hide)
     }
 
     render() {
